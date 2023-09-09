@@ -101,4 +101,4 @@ def consim(filettl, concept1, concept2):
 
 
 if __name__ == "__main__":
-    consim("pkmoontology.ttl", "Action", "Event")
+    consim("pkmoontology.ttl", "Event", "Event")
