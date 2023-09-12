@@ -3,6 +3,10 @@ from rdflib.namespace import RDFS
 
 
 def getConcepts(ontoFile):
+    """
+    This function uses a taxonomy to create two lists with a one to one correspondance
+    between child and parent
+    """
     pko_onto = Graph()
     pko_onto.parse(ontoFile)
     children = []
@@ -14,6 +18,10 @@ def getConcepts(ontoFile):
 
 
 def createChains(parent, children):
+    """
+    This function uses the two list on children and parents to create
+    list of all lineages of the corresponding taxonomy
+    """
     chains = []
     i = 0
     while i < len(children):
@@ -56,6 +64,10 @@ def createChains(parent, children):
 
 
 def consim(filettl, concept1, concept2):
+    """
+    This function select lineage for each concept, find their common ancestor
+    and calculate their similarity
+    """
     parent, children = getConcepts(filettl)
     # print("parent", parent)
     # print("\n\n")
