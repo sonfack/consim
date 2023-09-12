@@ -3,7 +3,7 @@ ConSim is a python library for concepts similarity within an ontology. It consis
 
 ![Concept similarity](images/simgraph.png "Concept similarity illustration")
 
-Formula: `ConSim(c*, c) = 2*N_R/(N*+N+2*N_R)`
+Formula: `ConSim(c^*, c) = 2*N_R/(N^*+N+2*N_R)`
 
 Was defined in:
 
