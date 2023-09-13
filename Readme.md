@@ -1,11 +1,13 @@
 # Concept similarity (consim)
-ConSim is a python library for concepts similarity within an ontology. It consists in looking for the most similar problem in terms of concept classification or taxonomy
+ConSim is a python library for concepts similarity within an ontology.
+
+It consists in calculating the similarity between two concepts of an ontology (Taxonomy). This implementation is based on the work of Wu Zhibiao. 
 
 ![Concept similarity](images/simgraph.png "Concept similarity illustration")
 
 Formula: `ConSim(c^*, c) = 2*N_R/(N^*+N+2*N_R)`
 
-Was defined in:
+## Reference
 
 `
 @inproceedings{verbssemantics1994,
