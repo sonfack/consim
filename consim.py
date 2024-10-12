@@ -1,6 +1,7 @@
 from rdflib import Graph
 from rdflib.namespace import RDFS
 
+SEPERATOR = "/"
 
 def getConcepts(ontoFile):
     """
@@ -12,8 +13,8 @@ def getConcepts(ontoFile):
     children = []
     parent = []
     for sub, obj in pko_onto.subject_objects(predicate=RDFS.subClassOf):
-        children.append(sub.rsplit('#')[-1])
-        parent.append(obj.rsplit('#')[-1])
+        children.append(sub.rsplit(SEPERATOR)[-1])
+        parent.append(obj.rsplit(SEPERATOR)[-1])
     return parent, children
 
 
@@ -89,6 +90,7 @@ def consim(filettl, concept1, concept2):
         if i < len(chains):
             print(concept1, "--", chains[pos1])
         c = chains[pos1]
+        print("#", c)
         chain1 = c[c.index(concept1):]
         # print(concept1, "--", chain1)
         i = 0
@@ -110,4 +112,4 @@ def consim(filettl, concept1, concept2):
         return nr2/n
 
 if __name__ == "__main__":
-    consim("pkmoontology.ttl", "Event", "Event")
+    consim("taxonomy.ttl", "Activity", "Activity")
